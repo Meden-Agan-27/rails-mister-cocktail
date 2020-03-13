@@ -1,11 +1,22 @@
-<h1>My cocktails</h1>
-
-<% @cocktails.each do |c| %>
-<ul>
-  <li>
-    <%= link_to c.name, cocktail_path(c) %>
-    <%= cl_image_tag(c.picture.key, width: 400, height: 300, crop: :fill) %>
-  </li>
-</ul>
-<% end %>
-<%= link_to "create a new cocktail", new_cocktail_path %>
+<p id="notice"><%= notice %></p>
+<h1><strong>Cocktail Index</strong></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Banner url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cocktails.each do |cocktail| %>
+      <tr>
+        <td><%= cocktail.name %></td>
+        <td><%= cl_image_tag(cocktail.picture.key, width: 400, height: 300, crop: :fill) %></td>
+        <td><%= link_to 'Show', cocktail %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Cocktail', new_cocktail_path %>
