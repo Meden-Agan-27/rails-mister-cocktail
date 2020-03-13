@@ -19,8 +19,6 @@ class CocktailsController < ApplicationController
     end
   end
 
-
-
   private
 
   def cocktail_params
