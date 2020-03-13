@@ -4,4 +4,5 @@ class Cocktail < ApplicationRecord
   has_one_attached :picture
 
   validates :name, uniqueness: true, presence: true
+  validates :picture, presence: true
 end
