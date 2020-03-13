@@ -4,6 +4,8 @@
 <ul>
   <li>
     <%= link_to c.name, cocktail_path(c) %>
+    <%= cl_image_tag c.picture.key,
+      width: 400, height: 300, crop: :fill)
   </li>
 </ul>
 <% end %>
